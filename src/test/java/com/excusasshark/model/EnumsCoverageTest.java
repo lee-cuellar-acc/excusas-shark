@@ -10,7 +10,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("RoleType.values() retorna todos los valores")
-    void roleType_Values_ReturnsAllValues() {
+    void roleTypeValuesReturnsAllValues() {
         RoleType[] values = RoleType.values();
         
         assertEquals(6, values.length);
@@ -29,7 +29,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("FragmentType.values() retorna todos los valores")
-    void fragmentType_Values_ReturnsAllValues() {
+    void fragmentTypeValuesReturnsAllValues() {
         FragmentType[] values = FragmentType.values();
         
         assertEquals(4, values.length);
@@ -46,7 +46,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("LawType.values() retorna todos los valores")
-    void lawType_Values_ReturnsAllValues() {
+    void lawTypeValuesReturnsAllValues() {
         LawType[] values = LawType.values();
         
         assertEquals(10, values.length);
@@ -69,7 +69,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("RoleType.valueOf() funciona correctamente")
-    void roleType_ValueOf_WorksCorrectly() {
+    void roleTypeValueOfWorksCorrectly() {
         assertEquals(RoleType.DEV, RoleType.valueOf("DEV"));
         assertEquals(RoleType.QA, RoleType.valueOf("QA"));
         assertEquals(RoleType.DEVOPS, RoleType.valueOf("DEVOPS"));
@@ -91,7 +91,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("FragmentType.valueOf() funciona correctamente")
-    void fragmentType_ValueOf_WorksCorrectly() {
+    void fragmentTypeValueOfWorksCorrectly() {
         assertEquals(FragmentType.CONTEXTO, FragmentType.valueOf("CONTEXTO"));
         assertEquals(FragmentType.CAUSA, FragmentType.valueOf("CAUSA"));
         assertEquals(FragmentType.CONSECUENCIA, FragmentType.valueOf("CONSECUENCIA"));
@@ -100,7 +100,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("LawType.valueOf() funciona correctamente")
-    void lawType_ValueOf_WorksCorrectly() {
+    void lawTypeValueOfWorksCorrectly() {
         assertEquals(LawType.MURPHY, LawType.valueOf("MURPHY"));
         assertEquals(LawType.HOFSTADTER, LawType.valueOf("HOFSTADTER"));
         assertEquals(LawType.DILBERT, LawType.valueOf("DILBERT"));
@@ -110,7 +110,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("LawType.getDescription() retorna la descripción correcta")
-    void lawType_GetDescription_ReturnsCorrectDescription() {
+    void lawTypeGetDescriptionReturnsCorrectDescription() {
         assertEquals("Ley de Murphy - Si algo puede salir mal, saldrá mal", LawType.MURPHY.getDescription());
         assertEquals("Ley de Hofstadter - Los plazos siempre son más largos de lo esperado", LawType.HOFSTADTER.getDescription());
         assertEquals("Principio Dilbert - El caos es inevitable en la oficina", LawType.DILBERT.getDescription());
@@ -120,7 +120,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("FragmentType.getDescription() retorna la descripción correcta")
-    void fragmentType_GetDescription_ReturnsCorrectDescription() {
+    void fragmentTypeGetDescriptionReturnsCorrectDescription() {
         assertEquals("Contexto: situación donde ocurrió", FragmentType.CONTEXTO.getDescription());
         assertEquals("Causa: razón root del problema", FragmentType.CAUSA.getDescription());
         assertEquals("Consecuencia: lo que pasó después", FragmentType.CONSECUENCIA.getDescription());

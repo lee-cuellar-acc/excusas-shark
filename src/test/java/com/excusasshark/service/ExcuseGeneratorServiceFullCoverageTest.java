@@ -95,7 +95,7 @@ class ExcuseGeneratorServiceFullCoverageTest {
 
     @Test
     @DisplayName("generateRandomExcuse cuando consecuencia es null retorna null")
-    void generateRandomExcuse_WhenConsecuenciaNull_ReturnsNull() {
+    void generateRandomExcuseWhenConsecuenciaNullReturnsNull() {
         when(fragmentService.getRandomFragment(FragmentType.CONTEXTO)).thenReturn(contexto);
         when(fragmentService.getRandomFragment(FragmentType.CAUSA)).thenReturn(causa);
         when(fragmentService.getRandomFragment(FragmentType.CONSECUENCIA)).thenReturn(null);
