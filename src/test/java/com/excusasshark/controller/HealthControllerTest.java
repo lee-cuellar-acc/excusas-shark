@@ -27,7 +27,7 @@ class HealthControllerTest {
 
     @Test
     @DisplayName("GET /health debe retornar 200 con status UP")
-    void testHealth_shouldReturn200WithStatusUp() {
+    void testHealthShouldReturn200WithStatusUp() {
         // Act
         ResponseEntity<Map<String, Object>> response = healthController.health();
 
@@ -43,7 +43,7 @@ class HealthControllerTest {
 
     @Test
     @DisplayName("GET /health debe incluir timestamp válido")
-    void testHealth_shouldIncludeValidTimestamp() {
+    void testHealthShouldIncludeValidTimestamp() {
         // Act
         ResponseEntity<Map<String, Object>> response = healthController.health();
 
@@ -57,7 +57,7 @@ class HealthControllerTest {
 
     @Test
     @DisplayName("GET /health debe retornar el mismo formato en múltiples llamadas")
-    void testHealth_shouldReturnConsistentFormat() {
+    void testHealthShouldReturnConsistentFormat() {
         // Act
         ResponseEntity<Map<String, Object>> response1 = healthController.health();
         ResponseEntity<Map<String, Object>> response2 = healthController.health();

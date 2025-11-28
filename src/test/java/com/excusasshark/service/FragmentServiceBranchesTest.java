@@ -1,7 +1,6 @@
 package com.excusasshark.service;
 
 import com.excusasshark.dto.FragmentRequestDTO;
-import com.excusasshark.model.Fragment;
 import com.excusasshark.model.FragmentType;
 import com.excusasshark.repository.FragmentRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)

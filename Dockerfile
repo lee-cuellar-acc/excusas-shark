@@ -2,7 +2,7 @@
 # Stage 1: Build stage using Maven
 FROM maven:3.9.11-eclipse-temurin-17 AS builder
 
-LABEL maintainer="Accenture Tech Team"
+LABEL maintainer="Tech Team"
 LABEL description="Build stage for Excusas Shark API"
 
 WORKDIR /build
@@ -17,7 +17,7 @@ RUN mvn clean package -DskipTests -q
 # Stage 2: Runtime stage using Java 17 Slim
 FROM eclipse-temurin:17-jre-alpine
 
-LABEL maintainer="Accenture Tech Team"
+LABEL maintainer="Tech Team"
 LABEL description="Runtime stage for Excusas Shark API"
 
 # Crear usuario no-root por seguridad

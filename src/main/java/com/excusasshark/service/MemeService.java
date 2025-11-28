@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * Servicio para gestión de memes
@@ -35,14 +34,14 @@ public class MemeService {
         return memeRepository.findAll()
                 .stream()
                 .map(MemeMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<MemeResponseDTO> getActive() {
         return memeRepository.findByActiveTrue()
                 .stream()
                 .map(MemeMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Meme getRandomMeme() {

@@ -1,6 +1,5 @@
 package com.excusasshark.service;
 
-import com.excusasshark.model.Meme;
 import com.excusasshark.repository.MemeRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,5 @@
 package com.excusasshark.service;
 
-import com.excusasshark.model.Law;
 import com.excusasshark.model.LawType;
 import com.excusasshark.repository.LawRepository;
 import org.junit.jupiter.api.DisplayName;

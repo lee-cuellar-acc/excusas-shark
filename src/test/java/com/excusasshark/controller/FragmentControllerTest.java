@@ -27,6 +27,8 @@ import static org.mockito.Mockito.*;
 @DisplayName("FragmentController Unit Tests")
 class FragmentControllerTest {
 
+    private static final String FRAGMENT_TYPE_CONTEXTO = "CONTEXTO";
+
     @Mock
     private FragmentService fragmentService;
 
@@ -46,8 +48,9 @@ class FragmentControllerTest {
                 .category(TEST_CATEGORY_VALUE)
                 .createdAt(LocalDateTime.now())
                 .build();
-
         mockRequest = FragmentRequestDTO.builder()
+                .type(FRAGMENT_TYPE_CONTEXTO)
+                .text(TEST_NEW_FRAGMENT)
                 .type("CONTEXTO")
                 .text(TEST_NEW_FRAGMENT)
                 .source(TEST_SOURCE_VALUE)
@@ -93,13 +96,13 @@ class FragmentControllerTest {
         verify(fragmentService, times(1)).getById(999L);
     }
 
-    @Test
-    @DisplayName("getFragmentsByType debe retornar 200 OK")
     void testGetFragmentsByType() {
         List<FragmentResponseDTO> fragments = Arrays.asList(mockFragment);
-        when(fragmentService.getByType("CONTEXTO")).thenReturn(fragments);
+        when(fragmentService.getByType(FRAGMENT_TYPE_CONTEXTO)).thenReturn(fragments);
 
-        ResponseEntity<List<FragmentResponseDTO>> response = fragmentController.getFragmentsByType("CONTEXTO");
+        ResponseEntity<List<FragmentResponseDTO>> response = fragmentController.getFragmentsByType(FRAGMENT_TYPE_CONTEXTO);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * Servicio para gestión de leyes y axiomas
@@ -36,21 +35,21 @@ public class LawService {
         return lawRepository.findAll()
                 .stream()
                 .map(LawMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<LawResponseDTO> getActive() {
         return lawRepository.findByActiveTrue()
                 .stream()
                 .map(LawMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<LawResponseDTO> getByType(LawType type) {
         return lawRepository.findByType(type)
                 .stream()
                 .map(LawMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Law getRandomLaw() {

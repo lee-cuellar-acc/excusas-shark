@@ -80,7 +80,7 @@ class EnumsCoverageTest {
 
     @Test
     @DisplayName("RoleType.getDisplayName() retorna el nombre correcto")
-    void roleType_GetDisplayName_ReturnsCorrectName() {
+    void roleTypeGetDisplayNameReturnsCorrectName() {
         assertEquals("Desarrollador", RoleType.DEV.getDisplayName());
         assertEquals("QA / Tester", RoleType.QA.getDisplayName());
         assertEquals("DevOps Engineer", RoleType.DEVOPS.getDisplayName());

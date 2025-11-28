@@ -440,9 +440,9 @@ docker-compose up
 
 ## 📞 Contacto & Soporte
 
-- **Equipo**: Accenture Tech Team
-- **Email**: tech@accenture.com
-- **Repositorio**: https://github.com/accenture/excusas-shark
+- **Equipo**: Lee Cuellar Tech Team
+- **Email**: leecordar@hotmail.com
+- **Repositorio**: https://github.com/lee-cuellar-acc/excusas-shark
 - **License**: MIT
 
 ---

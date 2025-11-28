@@ -4,7 +4,7 @@
 **Versión:** 1.0.0  
 **Fecha de Entrega:** 27 de noviembre de 2025  
 **Desarrollador:** Lee Cuellar  
-**Curso:** Java Mandatory - Accenture
+**Curso:** Java Mandatory
 
 ---
 
@@ -584,7 +584,7 @@ java -jar excusas-shark-1.0.0.jar
 - 4 PlantUML diagrams in /docs/uml
 
 ---
-Generated with ❤️ by Lee Cuellar
+Generated with by Lee Cuellar
 ```
 
 ⚠️ **PENDIENTE - Crear tag v1.0.0 en GitHub**
@@ -691,7 +691,7 @@ git tag -a v1.0.0 -m "Release: Excusas Shark API v1.0.0 - White Shark Level"
 git push origin v1.0.0
 
 # Verificar en:
-https://github.com/accenture/excusas-shark/releases
+https://github.com/excusas-shark/releases
 ```
 
 #### **2. Verificar Conventional Commits** 🟡
@@ -787,9 +787,9 @@ excusas-shark/
 ## 📞 Contacto y Soporte
 
 **Desarrollador:** Lee Cuellar  
-**Email:** lee.cuellar@accenture.com  
+**Email:** leecordar@hotmail.com  
 **Proyecto:** Excusas Shark API v1.0.0  
-**Curso:** Java Mandatory - Accenture  
+**Curso:** Java Mandatory  
 **Fecha de Entrega:** 27 de noviembre de 2025
 
 ---

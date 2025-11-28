@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Servicio para gestión de fragmentos
@@ -45,7 +44,7 @@ public class FragmentService {
         return fragmentRepository.findAll()
                 .stream()
                 .map(FragmentMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<FragmentResponseDTO> getByType(String type) {
@@ -54,7 +53,7 @@ public class FragmentService {
             return fragmentRepository.findByTypeAndActiveTrue(fragmentType)
                     .stream()
                     .map(FragmentMapper::toResponse)
-                    .collect(Collectors.toList());
+                    .toList();
         } catch (IllegalArgumentException e) {
             return List.of();
         }
@@ -64,7 +63,7 @@ public class FragmentService {
         return fragmentRepository.findByActiveTrue()
                 .stream()
                 .map(FragmentMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Fragment update(Long id, FragmentRequestDTO dto) {

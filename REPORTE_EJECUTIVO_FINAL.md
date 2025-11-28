@@ -356,6 +356,6 @@ El proyecto **Excusas Shark API** ha sido desarrollado exitosamente cumpliendo *
 
 ---
 
-**Equipo de Desarrollo**: Accenture Tech Team  
+**Equipo de Desarrollo**: Lee Cuellar Tech Team  
 **Framework**: Spring Boot 3.2.8 + Java 17  
 **Fecha de Entrega**: 27 de Noviembre de 2025

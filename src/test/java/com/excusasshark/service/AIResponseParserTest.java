@@ -1,6 +1,8 @@
 package com.excusasshark.service;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,25 +13,15 @@ class AIResponseParserTest {
 
     // ========== Tests para cleanMarkdownWrapper ==========
 
-    @Test
-    void testCleanMarkdownWrapper_ConJsonMarkdown_RemovedCorrectamente() {
-        String input = "```json\n{\"test\": \"value\"}\n```";
+    @ParameterizedTest
+    @CsvSource(delimiterString = "|", value = {
+        "```json\n{\"test\": \"value\"}\n```|{\"test\": \"value\"}",
+        "```\n{\"test\": \"value\"}\n```|{\"test\": \"value\"}",
+        "{\"test\": \"value\"}|{\"test\": \"value\"}"
+    })
+    void testCleanMarkdownWrapper_VariosFormatos_RemueveCorrectamente(String input, String expected) {
         String result = AIResponseParser.cleanMarkdownWrapper(input);
-        assertEquals("{\"test\": \"value\"}", result);
-    }
-
-    @Test
-    void testCleanMarkdownWrapper_ConMarkdownSimple_RemueveDelimitadores() {
-        String input = "```\n{\"test\": \"value\"}\n```";
-        String result = AIResponseParser.cleanMarkdownWrapper(input);
-        assertEquals("{\"test\": \"value\"}", result);
-    }
-
-    @Test
-    void testCleanMarkdownWrapper_SinMarkdown_RetornaSinCambios() {
-        String input = "{\"test\": \"value\"}";
-        String result = AIResponseParser.cleanMarkdownWrapper(input);
-        assertEquals("{\"test\": \"value\"}", result);
+        assertEquals(expected, result);
     }
 
     @Test
@@ -53,39 +45,21 @@ class AIResponseParserTest {
 
     // ========== Tests para extractJsonFromText ==========
 
-    @Test
-    void testExtractJsonFromText_ConTextoAntes_ExtraeJSON() {
-        String input = "Aquí está el JSON: {\"test\": \"value\"}";
+    @ParameterizedTest
+    @CsvSource(delimiterString = "|", value = {
+        "Aquí está el JSON: {\"test\": \"value\"}|{\"test\": \"value\"}",
+        "{\"test\": \"value\"} y algo más|{\"test\": \"value\"}",
+        "Texto antes {\"test\": \"value\"} texto después|{\"test\": \"value\"}",
+        "{\"test\": \"value\"}|{\"test\": \"value\"}",
+        "Sin llaves aquí|null"
+    })
+    void testExtractJsonFromText(String input, String expected) {
         String result = AIResponseParser.extractJsonFromText(input);
-        assertEquals("{\"test\": \"value\"}", result);
-    }
-
-    @Test
-    void testExtractJsonFromText_ConTextoDespues_ExtraeJSON() {
-        String input = "{\"test\": \"value\"} y algo más";
-        String result = AIResponseParser.extractJsonFromText(input);
-        assertEquals("{\"test\": \"value\"}", result);
-    }
-
-    @Test
-    void testExtractJsonFromText_ConTextoAmbosLados_ExtraeJSON() {
-        String input = "Texto antes {\"test\": \"value\"} texto después";
-        String result = AIResponseParser.extractJsonFromText(input);
-        assertEquals("{\"test\": \"value\"}", result);
-    }
-
-    @Test
-    void testExtractJsonFromText_JSONSolo_RetornaCompleto() {
-        String input = "{\"test\": \"value\"}";
-        String result = AIResponseParser.extractJsonFromText(input);
-        assertEquals("{\"test\": \"value\"}", result);
-    }
-
-    @Test
-    void testExtractJsonFromText_SinJSON_RetornaNull() {
-        String input = "Sin llaves aquí";
-        String result = AIResponseParser.extractJsonFromText(input);
-        assertNull(result);
+        if ("null".equals(expected)) {
+            assertNull(result);
+        } else {
+            assertEquals(expected, result);
+        }
     }
 
     @Test
@@ -176,7 +150,7 @@ class AIResponseParserTest {
     }
 
     @Test
-    void testHasAllRequiredFields_UnoFaltante_RetornaFalse() {
+    void testHasAllRequiredFieldsUnoFaltanteRetornaFalse() {
         String json = "{\"contexto\": \"test\", \"causa\": \"bug\", \"consecuencia\": \"error\"}";
         boolean result = AIResponseParser.hasAllRequiredFields(json, "contexto", "causa", "consecuencia", "recomendacion");
         assertFalse(result);

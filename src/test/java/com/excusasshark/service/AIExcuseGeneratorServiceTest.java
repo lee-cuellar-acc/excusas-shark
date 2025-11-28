@@ -9,6 +9,9 @@ import com.excusasshark.repository.ExcuseRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -90,43 +93,15 @@ class AIExcuseGeneratorServiceTest {
         when(chatClientBuilder.build()).thenThrow(new RuntimeException("Ollama no disponible"));
     }
 
-    // ========== TESTS DE FALLBACK (cuando Ollama falla) ==========
-    // Estos tests cubren el 100% del código crítico (fallback mechanism)
-    // El código de parsing AI (parseAIResponse/extractJsonField) solo se ejecuta con Ollama real
-
-    @Test
-    void testGenerateAIExcuse_SinContexto_UsaFallback() {
+    @ParameterizedTest
+    @NullAndEmptySource
+    @ValueSource(strings = {"microservicios"})
+    void testGenerateAIExcuse_UsaFallback(String contexto) {
         // Given
         when(excuseGeneratorService.generateRandomExcuse()).thenReturn(mockExcuseResponse);
 
         // When
-        ExcuseResponseDTO result = aiExcuseGeneratorService.generateAIExcuse(null);
-
-        // Then
-        assertNotNull(result);
-        verify(excuseGeneratorService, times(1)).generateRandomExcuse();
-    }
-
-    @Test
-    void testGenerateAIExcuse_ConContexto_UsaFallback() {
-        // Given
-        when(excuseGeneratorService.generateRandomExcuse()).thenReturn(mockExcuseResponse);
-
-        // When
-        ExcuseResponseDTO result = aiExcuseGeneratorService.generateAIExcuse("microservicios");
-
-        // Then
-        assertNotNull(result);
-        verify(excuseGeneratorService, times(1)).generateRandomExcuse();
-    }
-
-    @Test
-    void testGenerateAIExcuse_ConContextoVacio_UsaFallback() {
-        // Given
-        when(excuseGeneratorService.generateRandomExcuse()).thenReturn(mockExcuseResponse);
-
-        // When
-        ExcuseResponseDTO result = aiExcuseGeneratorService.generateAIExcuse("");
+        ExcuseResponseDTO result = aiExcuseGeneratorService.generateAIExcuse(contexto);
 
         // Then
         assertNotNull(result);
@@ -183,7 +158,7 @@ class AIExcuseGeneratorServiceTest {
     }
 
     @Test
-    void testGenerateAIUltraExcuse_ExcuseBaseEsNull_DevuelveNull() {
+    void testGenerateAIUltraExcuseExcuseBaseEsNullDevuelveNull() {
         // Given
         when(excuseGeneratorService.generateRandomExcuse()).thenReturn(null);
 

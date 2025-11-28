@@ -100,7 +100,7 @@ class DataLoaderConfigMissingFilesTest {
         @Test
         @Order(1)
         @DisplayName("Branches 186-187: fragments.json NO existe")
-        void testBranches186_187_NoFragmentsJson() {
+        void testBranches186And187NoFragmentsJson() {
             Assertions.assertTrue(true, "Context started successfully without fragments.json");
         }
     }
@@ -132,7 +132,7 @@ class DataLoaderConfigMissingFilesTest {
         @Test
         @Order(1)
         @DisplayName("Branches 190-191: memes.json NO existe")
-        void testBranches190_191_NoMemesJson() {
+        void testBranches190And191NoMemesJson() {
             Assertions.assertTrue(true, "Context started successfully without memes.json");
         }
     }
@@ -164,7 +164,7 @@ class DataLoaderConfigMissingFilesTest {
         @Test
         @Order(1)
         @DisplayName("Branches 194-195: laws.json NO existe")
-        void testBranches194_195_NoLawsJson() {
+        void testBranches194And195NoLawsJson() {
             Assertions.assertTrue(true, "Context started successfully without laws.json");
         }
     }

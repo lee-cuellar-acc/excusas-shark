@@ -3,7 +3,7 @@
 ## Prerequisitos
 ```powershell
 # 1. Iniciar Ollama
-Start-Process -FilePath "C:\Users\lee.cuellar\AppData\Local\Programs\Ollama\ollama.exe" -ArgumentList "serve" -WindowStyle Hidden
+Start-Process -FilePath "PATH" -ArgumentList "serve" -WindowStyle Hidden
 
 # 2. Verificar Ollama
 curl http://localhost:11434  # Debe responder: "Ollama is running"

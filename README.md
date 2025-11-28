@@ -782,11 +782,12 @@ Contribuciones bienvenidas. Por favor:
 
 ## 📞 Contacto
 
-- **Equipo**:  Lee Cuellar - Tech Team
+- **Equipo**: Tech Team
 - **Email**: leecordar@hotmail.com
+- **Website**:
 
 ---
 
-**¡Hecho con ❤️ por Accenture!**
+**¡Hecho con ❤️ por Lee Cuellar!**
 
 *"Del Mojarrita al White Shark, generando excusas desde 2024"* 🦈

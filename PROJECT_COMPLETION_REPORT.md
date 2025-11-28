@@ -402,9 +402,9 @@ Logging:               SLF4J (Spring default)
 
 ## 📞 CONTACT & SUPPORT
 
-Equipo:                Accenture Java Shark
-Email:                 lee.cuellar@accenture.com
-Repository:            https://github.com/accenture/excusas-shark
+Equipo:                Java Shark
+Email:                 leecordar@hotmail.com
+Repository:            https://github.com/lee-cuellar-acc/excusas-shark
 License:               MIT
 Version:               1.0.0
 
@@ -422,7 +422,7 @@ This project demonstrates professional software engineering practices:
 
 Perfect for learning or as a template for new projects.
 
-**Built with ❤️ by Accenture Tech Team**
+**Built with ❤️ by  Lee Cuellar**
 
 "Del Mojarrita al White Shark, generando excusas desde 2025" 🦈
 

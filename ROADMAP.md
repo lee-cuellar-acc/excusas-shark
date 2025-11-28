@@ -492,8 +492,7 @@ Para sugerir mejoras al roadmap:
 
 1. **GitHub Issues**: Crear issue con label `roadmap`
 2. **Discussions**: Participar en GitHub Discussions
-3. **Email**: tech@accenture.com
-4. **Twitter**: @excusasshark
+3. **Email**: leecordar@hotmail.com
 
 ---
 
